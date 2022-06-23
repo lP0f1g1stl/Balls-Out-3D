@@ -21,6 +21,7 @@ public class Level : MonoBehaviour, IWaveObserver, ILevelObserver, ICaptureBallO
     public static Level instance;
     public PlayerState playerState;
     public GameConfig gameConfig;
+    public LevelData levelData;
 
     public float size = 2f;
 
@@ -386,7 +387,7 @@ public class Level : MonoBehaviour, IWaveObserver, ILevelObserver, ICaptureBallO
                 else if (ballSize < 9) ballSize = 1;
                 else if (ballSize < 10) ballSize = 2;
                 if (count >= max) continue;
-                var ball = Instantiate(ballSize == 2 ? gameConfig.ballBig : ballSize == 1 ? gameConfig.ballMid : gameConfig.ball, newLab.transform);
+                var ball = CreateBall(ballSize, newLab);
                 ball.transform.localPosition = Vector3.right * (j % sq - sq / 2) * 0.1f + Vector3.down * (j / sq - sq / 2) * 0.1f + Vector3.forward * d * 0.1f;
 
                 var scale = RemoteSettings.GetFloat(ballSize == 0 ? "ballSize0" : ballSize == 1 ? "ballSize1" : "ballSize2", 1f);
@@ -398,6 +399,29 @@ public class Level : MonoBehaviour, IWaveObserver, ILevelObserver, ICaptureBallO
         }
 
         ballsCountText.text = "x " + balls.Count;
+    }
+
+    private Ball CreateBall(int ballSize, Labyrinth newLab)
+    {
+        if (levelData.BallType.Length > playerState.level)
+        {
+            BallType ballType = levelData.BallType[playerState.level];
+            switch (ballType)
+            {
+                case BallType.Standart:
+                    return Instantiate(ballSize == 2 ? gameConfig.ballsData.Balls[0].Ball[2] : ballSize == 1 ? gameConfig.ballsData.Balls[0].Ball[1] : gameConfig.ballsData.Balls[0].Ball[0], newLab.transform);
+                case BallType.Fruit:
+                    int rand = Random.Range(0, gameConfig.ballsData.Balls[1].Ball.Length);
+                    return Instantiate(gameConfig.ballsData.Balls[1].Ball[rand], newLab.transform);
+                case BallType.Water:
+                    return Instantiate(gameConfig.ballsData.Balls[2].Ball[0], newLab.transform);
+                default: return Instantiate(ballSize == 2 ? gameConfig.ballsData.Balls[0].Ball[2] : ballSize == 1 ? gameConfig.ballsData.Balls[0].Ball[1] : gameConfig.ballsData.Balls[0].Ball[0], newLab.transform);
+            }
+        }
+        else
+        {
+            return Instantiate(ballSize == 2 ? gameConfig.ballsData.Balls[0].Ball[2] : ballSize == 1 ? gameConfig.ballsData.Balls[0].Ball[1] : gameConfig.ballsData.Balls[0].Ball[0], newLab.transform);
+        }
     }
 
     public bool CanShowAds()

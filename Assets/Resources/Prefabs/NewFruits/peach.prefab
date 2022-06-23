@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5437378347039714134}
   - component: {fileID: 5409548094506702554}
   - component: {fileID: 5419204869284106848}
-  - component: {fileID: 3352950172131984413}
-  - component: {fileID: 1990563124536602527}
   - component: {fileID: 7641383886798709912}
+  - component: {fileID: -7022423508253883628}
+  - component: {fileID: -1684208272598490022}
   m_Layer: 0
   m_Name: peach
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431481228157378558}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.03601761, y: -0.07573068, z: -0.20877886}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,7 +81,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!54 &3352950172131984413
+--- !u!114 &7641383886798709912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5431481228157378558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13262519aaeb1f348bd1de217734b95f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastVel: {x: 0, y: 0, z: 0}
+  isContactBall: 0
+--- !u!54 &-7022423508253883628
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,30 +111,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!135 &1990563124536602527
+--- !u!135 &-1684208272598490022
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431481228157378558}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2a08cc18c1106de48ad4d10e50a2b7c0, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.008151753
   m_Center: {x: 0.0010625503, y: 0.00045279335, z: 0.0000000018626448}
---- !u!114 &7641383886798709912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5431481228157378558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13262519aaeb1f348bd1de217734b95f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lastVel: {x: 0, y: 0, z: 0}
-  isContactBall: 0

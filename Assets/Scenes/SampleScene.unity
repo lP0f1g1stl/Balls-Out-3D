@@ -192,6 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerState: {fileID: 11400000, guid: 21891b434fbbb88459b66e2990993323, type: 2}
   gameConfig: {fileID: 11400000, guid: 8930f998794edbc4e99b510a2e6df567, type: 2}
+  levelData: {fileID: 11400000, guid: a81d1ae1765299c43a407147044c3ea4, type: 2}
   size: 7
   levelText: {fileID: 487538320}
   backgroundImage: {fileID: 680289541}

@@ -10,12 +10,10 @@ public class GameConfig : ScriptableObject
     [AssetPath.Attribute(typeof(Labyrinth))]
     public string[] fanLabyrinthsStr;
 
-   // public Labyrinth[] labyrinths;
-   // public Labyrinth[] fanLabyrinths;
+    // public Labyrinth[] labyrinths;
+    // public Labyrinth[] fanLabyrinths;
 
-    public Ball ball;
-    public Ball ballBig;
-    public Ball ballMid;
+    public BallsData ballsData;
 
     public int wavesCount = 3;
 
