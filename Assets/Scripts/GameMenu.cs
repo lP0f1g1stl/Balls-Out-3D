@@ -10,6 +10,8 @@ public class GameMenu : MonoBehaviour
     public PlayerState playerState;
     public bool settingsExpand;
 
+    public LevelMenu levelMenu;
+
     public RectTransform[] settingsButtons;
 
     public Image vibrateImage;
@@ -95,5 +97,9 @@ public class GameMenu : MonoBehaviour
     void UpdateMusic()
     {
         musicImage.sprite = PlayerPrefs.GetInt("Music", 1) == 1 ? musicOnIcon : musicOffIcon;
+    }
+    public void ShowLevelMenu() 
+    {
+        levelMenu.gameObject.SetActive(true);
     }
 }

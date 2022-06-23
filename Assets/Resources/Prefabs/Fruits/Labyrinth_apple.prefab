@@ -52,6 +52,7 @@ MonoBehaviour:
   roof: {fileID: 5075909649857618397}
   isNeedLoonka: 0
   isNeedShadows: 1
+  isBoss: 0
 --- !u!136 &8099376822522992802
 CapsuleCollider:
   m_ObjectHideFlags: 0
