@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   labyrinthsStr:
   - Assets/Resources/Prefabs/Labyrinth_tutorial 25.prefab
-  - Assets/Resources/Prefabs/Labyrinth_tutorial 26.prefab
-  - Assets/Resources/Prefabs/Labyrinth_tutorial 27.prefab
+  - Assets/Resources/Prefabs/Labyrinth_tutorial_8.prefab
+  - Assets/Resources/Prefabs/NewFruits/Labyrinth_banana.prefab
   - Assets/Resources/Prefabs/Labyrinth_tutorial 28.prefab
   - Assets/Resources/Prefabs/Labyrinth_tutorial 29.prefab
   - Assets/Resources/Prefabs/Labyrinth_tutorial 30.prefab
